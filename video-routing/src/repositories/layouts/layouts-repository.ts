@@ -20,6 +20,7 @@ export class LayoutsRepository {
 
 	private seed(): void {
 		this.store.clear();
+
 		this.store.set(this.seedLayoutIds.defaultGrid, {
 			id: this.seedLayoutIds.defaultGrid,
 			name: "Default Grid",
@@ -56,6 +57,7 @@ export class LayoutsRepository {
 		patch: UpdateLayoutRequest,
 	): Promise<Layout | undefined> {
 		const existing = this.store.get(id);
+
 		if (!existing) {
 			return undefined;
 		}
